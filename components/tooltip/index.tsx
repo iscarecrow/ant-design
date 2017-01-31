@@ -132,7 +132,7 @@ export default class Tooltip extends React.Component<TooltipProps, any> {
       visible = false;
     }
 
-    const child = React.isValidElement(children) ? children : <span>{children}</span>;
+    const child = React.isValidElement(children) ? children : <span>{children}</span> as React.ReactElement<any>;
     const childProps = child.props;
     const childCls = classNames(childProps.className, {
       [openClassName || `${prefixCls}-open`]: true,

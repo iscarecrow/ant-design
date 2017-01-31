@@ -30,7 +30,7 @@ export default class Header extends React.Component<HeaderProps, any> {
     const end = start + yearSelectTotal;
     const suffix = locale.year === '年' ? '年' : '';
 
-    const options: React.ReactElement<any>[] = [];
+    const options: JSX.Element[] = [];
     for (let index = start; index < end; index++) {
       options.push(<Option key={`${index}`}>{index + suffix}</Option>);
     }
@@ -61,7 +61,7 @@ export default class Header extends React.Component<HeaderProps, any> {
   getMonthSelectElement(month, months) {
     const props = this.props;
     const { prefixCls, fullscreen } = props;
-    const options: React.ReactElement<any>[] = [];
+    const options: JSX.Element[] = [];
 
     for (let index = 0; index < 12; index++) {
       options.push(<Option key={`${index}`}>{months[index]}</Option>);
