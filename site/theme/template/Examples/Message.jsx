@@ -9,13 +9,10 @@ const info = function () {
   message.success('This is a normal message');
 };
 
-
-class Message extends React.Component {
+export default class Message extends React.Component {
   render() {
     return (
       <Button type="primary" onClick={info}>Display normal message</Button>
     )
   }
 }
-
-export default Message;
