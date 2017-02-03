@@ -2,6 +2,20 @@ import React from 'react';
 import MainContent from './MainContent';
 import * as utils from '../utils';
 
+
+// nextProps
+//
+// {
+//   data:{},  md  components/*.xx/demo  docs
+//   location:{},  history
+//   pageData:{},
+//   params:{},  router  :children
+//   picked:{},
+//   routers:[],
+//   themeConfig:{},
+//   utils:{}
+// }
+
 export function collect(nextProps, callback) {
   const pathname = nextProps.location.pathname;
   const locale = utils.isZhCN(pathname) ? 'zh-CN' : 'en-US';
@@ -17,6 +31,7 @@ export function collect(nextProps, callback) {
 
   const pageDataPromise = typeof pageData === 'function' ?
           pageData() : (pageData[locale] || pageData.index[locale] || pageData.index)();
+
   const promises = [pageDataPromise];
 
   const demos = nextProps.utils.get(nextProps.data, [...pageDataPath, 'demo']);

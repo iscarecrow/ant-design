@@ -93,6 +93,8 @@ function getStyle() {
   `;
 }
 
+
+// 首页home的内容 url localhost:8001
 function Home(props) {
   return (
     <DocumentTitle title={`Ant Design - ${props.intl.formatMessage({ id: 'app.home.slogan' })}`}>

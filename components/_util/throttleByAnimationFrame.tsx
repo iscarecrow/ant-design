@@ -26,7 +26,6 @@ export function throttleByAnimationFrameDecorator(threshhold = 250) {
         if (definingProperty || this === target.prototype || this.hasOwnProperty(key)) {
           return fn;
         }
-
         let boundFn = throttleByAnimationFrame(fn.bind(this), threshhold);
         definingProperty = true;
         Object.defineProperty(this, key, {

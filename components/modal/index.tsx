@@ -15,6 +15,7 @@ export interface ModalFuncProps {
   cancelText?: string;
   iconType?: string;
 }
+
 Modal.info = function (props: ModalFuncProps) {
   const config = assign({}, {
     type: 'info',

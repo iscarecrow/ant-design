@@ -107,6 +107,7 @@ export default class Affix extends React.Component<AffixProps, any> {
 
   @throttleByAnimationFrameDecorator(250)
   updatePosition(e) {
+    //  did 4 time every 250ms??
     let { offsetTop, offsetBottom, offset, target = getDefaultTarget } = this.props;
     const targetNode = target();
 
@@ -178,6 +179,7 @@ export default class Affix extends React.Component<AffixProps, any> {
   componentDidMount() {
     const target = this.props.target || getDefaultTarget;
     // Wait for parent component ref has its value
+    // ??????????????????????????/
     this.timeout = setTimeout(() => {
       this.setTargetEventListeners(target);
     });
@@ -203,6 +205,7 @@ export default class Affix extends React.Component<AffixProps, any> {
     if (!target) {
       return;
     }
+    // window target
     this.scrollEvent = addEventListener(target, 'scroll', this.updatePosition);
     this.resizeEvent = addEventListener(target, 'resize', this.updatePosition);
   }

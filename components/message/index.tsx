@@ -24,6 +24,7 @@ function notice(
   duration: number = defaultDuration,
   type: NoticeType,
   onClose?: () => void) {
+
   let iconType = ({
     info: 'info-circle',
     success: 'check-circle',

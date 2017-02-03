@@ -2,8 +2,10 @@ const path = require('path');
 
 const homeTmpl = './template/Home/index';
 const contentTmpl = './template/Content/index';
+const exampleTmpl = './template/Examples/index';
 
 function pickerGenerator(module) {
+  // console.log(module);
   const tester = new RegExp(`^docs/${module}`);
   return (markdownData) => {
     const filename = markdownData.meta.filename;
@@ -15,7 +17,6 @@ function pickerGenerator(module) {
     }
   };
 }
-
 module.exports = {
   lazyLoad(nodePath, nodeValue) {
     if (typeof nodeValue === 'string') {
@@ -86,6 +87,9 @@ module.exports = {
     }, {
       path: 'docs/resource/:children',
       component: contentTmpl,
+    },{
+      path: 'examples/:children/',
+      component: exampleTmpl
     }],
   },
 };
